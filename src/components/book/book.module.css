@@ -1,0 +1,42 @@
+.center {
+    text-align: center;
+    position: relative;
+}
+.add {
+    color: white;
+    font-size: 1.8rem;
+
+}
+.add:hover {
+    color: black;
+    transition: all .7s;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.contact__ava {
+    width: 80px;
+    height: 80px;
+}
+
+.contact__info {
+    margin-left: 5%;
+    
+}
+
+.contact__name {
+    color: white;
+    font-size: 2.4rem;
+}
+
+.contact__phone {
+    padding-top: 1.4rem;
+    display: block;
+    width: 200px;
+    color: white;
+    font-size: 1.8rem;
+}

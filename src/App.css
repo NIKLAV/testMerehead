@@ -8,7 +8,8 @@ ul li {
 }
 html {
     font-size: 10px;
-    
+    background: linear-gradient(to bottom, #5041b2, #7969e6) no-repeat center center fixed;
+    background-size: cover;
 }
 
 a {
@@ -21,6 +22,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #5041b2, #7969e6)
+    height: 100%;
+  
+    
 }
