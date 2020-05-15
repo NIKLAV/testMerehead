@@ -1,27 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../../Hooks/useFetch";
 import malePhoto from "../../assets/man-1.png";
 import femalePhoto from "../../assets/girl-1.png";
 import classes from "./book.module.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import Button from "../common/button/button";
+import axios from "axios";
 
 const Book = (props) => {
-  const [{ isLoading, response, error }, doFetch] = useFetch("contacts");
-  console.log(response, isLoading, error);
-  const slug = props.match.params.slug
+  const [{ isLoading, response: fetchContactRespose }, doFetch] = useFetch("contacts");
+  /* const [{ response: deleteContactResponse }, doDeleteContact] = useFetch(url); */
+
   useEffect(() => {
-    doFetch()
-  },[doFetch])
+    doFetch();
+  }, [doFetch]);
+
+  console.log(fetchContactRespose);
+  /* const deleteContact = () => {
+     doDeleteContact ({
+      method: 'delete'
+    })
+    
+  } */
+  const deleteContact =  (id) => {
+     axios.delete(`http://localhost:3000/contacts/${id}`).then(doFetch());
+  };
+
+  /* 
+  useEffect(() => {
+    if (!deleteContactResponse) {
+      return
+    }
+    setIsSuccessfullDelete(true)
+  },[deleteContactResponse]) */
+
+  /* if (isSuccessfullDelete) {
+    return <Redirect to='/book'/>
+  } */
 
   return (
     <div className={classes.center}>
-      <Link className={classes.add} to={`/create`}>Добавить новый контакт</Link>
+      <Link className={classes.add} to={`/create`}>
+        Добавить новый контакт
+      </Link>
       {!isLoading &&
-        response &&
-        response.map((user) => (
+        fetchContactRespose &&
+        fetchContactRespose.map((user) => (
           <div className={classes.contact} key={user.id}>
             <div>
-              <Link to={`/profile${user.id}`}>
+              <Link to={`/profile/${user.id}`}>
                 <img
                   className={classes.contact__ava}
                   src={user.male === true ? malePhoto : femalePhoto}
@@ -33,7 +60,7 @@ const Book = (props) => {
               <div>
                 <Link
                   className={classes.contact__name}
-                  to={`/profile${user.id}`}
+                  to={`/profile/${user.id}`}
                 >
                   {user.name}
                 </Link>
@@ -47,6 +74,9 @@ const Book = (props) => {
                 </a>
               </div>
             </div>
+            <Button type="delete" onClick={() => deleteContact(user.id)}>
+              Delete
+            </Button>
           </div>
         ))}
     </div>

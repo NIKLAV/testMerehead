@@ -27,3 +27,6 @@
 .success {
     background-color: rgba(161, 240, 69, .7);
 }
+.delete {
+    background-color: rgba(218, 22, 64, 0.7)
+}

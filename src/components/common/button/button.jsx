@@ -7,7 +7,7 @@ const Button = props => {
         classes[props.type]
     ]
 
-    return <button className={cls.join(' ')}>{props.children}</button>
+    return <button onClick={props.onClick} className={cls.join(' ')}>{props.children}</button>
 }
 
 export default Button;

@@ -5,8 +5,8 @@ import { Route, BrowserRouter } from "react-router-dom";
 import Login from "./components/auth/login";
 import Navbar from "./components/menu/Navbar";
 import Book from "./components/book/Book";
-import CreateNewContact from "./components/book/createnewcontact/createnewcontact";
 import EditContact from "./components/editcontact/editContact";
+import ContainerCreateNewContact from "./components/book/createnewcontact/containercreate";
 
 const App = (props) => {
   return (
@@ -21,8 +21,14 @@ const App = (props) => {
         />
         <Route path="/auth" component={Login} />
         <Route path="/book" component={Book} />
-        <Route path="/create" component={CreateNewContact} />
-        <Route path="/profile" component={EditContact} />
+        <Route path="/create" component={ContainerCreateNewContact} />
+        <Route
+          path="/profile/:id"
+          render={({ match }) => {
+            const { id } = match.params;
+            return <EditContact itemId={id}/>;
+          }}
+        />
       </div>
     </BrowserRouter>
   );

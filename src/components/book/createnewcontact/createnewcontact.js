@@ -5,15 +5,16 @@ import useFetch from "../../../Hooks/useFetch";
 import classes from "./createnewcontact.module.css"
 import { Redirect } from "react-router-dom";
 
-const CreateNewContact = (props) => {
-  const [name, setName] = useState("");
+
+const CreateNewContact = ({onSubmit, initialValues}) => {
+   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [male, setMale] = useState("Male");
+  const [male, setMale] = useState("Male"); 
   const [{ response }, doFetch] = useFetch("contacts");
-  const [isSubmit, setIsSubmit] = useState(false)
+/*   const [isSubmit, setIsSubmit] = useState(false) */
   
-  console.log(props)
-  const handleSubmit = (event) => {
+ /*  console.log(props)
+   const handleSubmit = (event) => {
     event.preventDefault()
     setIsSubmit(true);
     let maleToBool = male === 'Male' ? true : false;
@@ -26,12 +27,32 @@ const CreateNewContact = (props) => {
         male: maleToBool,
       },
     }); 
-  };
-  
+  }; 
 
-  if (isSubmit) {
+    if (isSubmit) {
    return <Redirect to='book'/>
-  }
+  }  
+   */
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let maleToBool = male === 'Male' ? true : false;
+    const contacts = {
+      name,
+      phone,
+      male: maleToBool,
+      
+    };
+    onSubmit(contacts);
+  };
+
+  useEffect(() => {
+    if (!initialValues) {
+      return;
+    }
+    setName(initialValues.name);
+    setPhone(initialValues.phone);
+    setMale(initialValues.male);
+  }, [initialValues])
   
   return (
     <div className={classes.form}>
@@ -56,7 +77,8 @@ const CreateNewContact = (props) => {
         </div>
         <Button>Создать</Button>
       </form>
-    </div>
+    </div> 
+ 
   );
 };
 
