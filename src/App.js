@@ -1,32 +1,21 @@
 import React from "react";
-
 import "./App.css";
 import { Route, BrowserRouter } from "react-router-dom";
-import Login from "./components/auth/login";
-import Navbar from "./components/menu/Navbar";
-import Book from "./components/book/Book";
-import EditContact from "./components/editcontact/editContact";
-import ContainerCreateNewContact from "./components/book/createnewcontact/containercreate";
+import EditContact from "./components/book/editcontact/EditContact";
+import ContainerCreateNewContact from "./components/book/createnewcontact/ContainerCreate";
+import Contacts from "./components/book/Contacts";
 
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
-        <Navbar />
-
-        <Route
-          path="/"
-          render={() => <h1>Добро пожаловать на борт!</h1>}
-          exact
-        />
-        <Route path="/auth" component={Login} />
-        <Route path="/book" component={Book} />
+        <Route path="/" component={Contacts} exact />
         <Route path="/create" component={ContainerCreateNewContact} />
         <Route
-          path="/profile/:id"
+          path="/user/:id"
           render={({ match }) => {
             const { id } = match.params;
-            return <EditContact itemId={id}/>;
+            return <EditContact itemId={id} />;
           }}
         />
       </div>
