@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/testMerehead/static/css/main.eeb8125c.chunk.css",
+    "main.js": "/testMerehead/static/js/main.6a00bdee.chunk.js",
+    "main.js.map": "/testMerehead/static/js/main.6a00bdee.chunk.js.map",
+    "runtime-main.js": "/testMerehead/static/js/runtime-main.10f18495.js",
+    "runtime-main.js.map": "/testMerehead/static/js/runtime-main.10f18495.js.map",
+    "static/js/2.558d7c80.chunk.js": "/testMerehead/static/js/2.558d7c80.chunk.js",
+    "static/js/2.558d7c80.chunk.js.map": "/testMerehead/static/js/2.558d7c80.chunk.js.map",
+    "index.html": "/testMerehead/index.html",
+    "precache-manifest.1e1075ce3242db9284c578ecc6988412.js": "/testMerehead/precache-manifest.1e1075ce3242db9284c578ecc6988412.js",
+    "service-worker.js": "/testMerehead/service-worker.js",
+    "static/css/main.eeb8125c.chunk.css.map": "/testMerehead/static/css/main.eeb8125c.chunk.css.map",
+    "static/js/2.558d7c80.chunk.js.LICENSE.txt": "/testMerehead/static/js/2.558d7c80.chunk.js.LICENSE.txt",
+    "static/media/man-1.png": "/testMerehead/static/media/man-1.bd80794f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.10f18495.js",
+    "static/js/2.558d7c80.chunk.js",
+    "static/css/main.eeb8125c.chunk.css",
+    "static/js/main.6a00bdee.chunk.js"
+  ]
+}
