@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "../common/Button/Button.js";
+import Button from "../common/button/Button";
 import classes from './Contacts.module.css'
 import Photo from "../../assets/man-1.png"
 

@@ -1,8 +1,9 @@
 import React, {useState } from "react";
-import CreateNewContact from "../CreateNewContact/СreateNewContact";
+
 import { Redirect } from "react-router-dom";
 import { editContact, fetchContacts } from "../../../redux/actions";
 import { connect } from "react-redux";
+import CreateNewContact from "../createnewcontact/СreateNewContact";
 
 const EditContact = ({
   itemId,

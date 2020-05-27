@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Input from "../../common/Input/Input";
-import Button from "../../common/Button/Button";
+import Input from "../../common/input/Input";
+import Button from "../../common/button/Button";
 import classes from "./createnewcontact.module.css";
 
 
