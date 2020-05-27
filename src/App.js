@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, BrowserRouter } from "react-router-dom";
 import EditContact from "./components/book/editcontact/EditContact";
-import ContainerCreateNewContact from "./components/book/createnewcontact/ContainerCreate";
+import ContainerCreateNewContact from "./components/book/CreateNewContact/ContainerCreate";
 import Contacts from "./components/book/Contacts";
 
 const App = () => {
