@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import CreateNewContact from './СreateNewContact'
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { addContacts } from '../../../redux/actions';
+import React, { useState } from "react"
+import CreateNewContact from "./СreateNewContact"
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { addContacts } from "../../../redux/actions";
 
 const ContainerCreateNewContact = ({addContacts}) => {
     const [isSubmit, setIsSubmit] = useState(false);
@@ -18,7 +18,7 @@ const ContainerCreateNewContact = ({addContacts}) => {
       };  
     
        if (isSubmit) {
-       return <Redirect to='/'/>
+       return <Redirect to="/"/>
       } 
     
        return (

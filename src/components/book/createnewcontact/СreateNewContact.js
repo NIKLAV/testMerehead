@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import Input from "../../common/input/Input";
 import Button from "../../common/button/Button";
 import classes from "./createnewcontact.module.css";

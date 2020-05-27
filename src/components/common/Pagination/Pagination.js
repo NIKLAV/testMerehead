@@ -1,6 +1,6 @@
-import React from 'react';
-import classes from './Pagination.module.css'
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import classes from "./Pagination.module.css"
+import { NavLink } from "react-router-dom";
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const pageNumbers = [];
   
